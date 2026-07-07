@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Visor RA 3D</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Visor web de modelo 3D con realidad aumentada">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="result.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          Ver en tu espacio
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png" alt="Guia para mover el telefono en realidad aumentada">
+      </div>
+    </model-viewer>  
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+  </body>
+</html>
