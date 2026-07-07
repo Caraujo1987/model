@@ -1,3 +1,5 @@
+const modelViewer = document.querySelector('model-viewer');
+
 // Handles loading the events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
@@ -10,4 +12,17 @@ const onProgress = (event) => {
     progressBar.classList.remove('hide');
   }
 };
-document.querySelector('model-viewer').addEventListener('progress', onProgress);
+modelViewer.addEventListener('progress', onProgress);
+
+document.querySelectorAll('[data-placement]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const placement = button.dataset.placement;
+    modelViewer.setAttribute('ar-placement', placement);
+
+    document.querySelectorAll('[data-placement]').forEach((option) => {
+      const isActive = option === button;
+      option.classList.toggle('active', isActive);
+      option.setAttribute('aria-pressed', String(isActive));
+    });
+  });
+});

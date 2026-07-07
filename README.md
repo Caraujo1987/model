@@ -6,7 +6,7 @@ Proyecto web estatico para visualizar un modelo 3D (`result.glb`) con soporte de
 
 - `index.html`: estructura del visor 3D/RA.
 - `styles.css`: estilos del visor, barra de progreso y boton RA.
-- `script.js`: control de progreso de carga.
+- `script.js`: control de progreso de carga y selector de plano RA.
 - `result.glb`: modelo 3D.
 - `poster.webp`: imagen previa del modelo.
 
@@ -35,3 +35,5 @@ http://localhost:8000
 ## Nota RA
 
 La realidad aumentada funciona mejor desde un telefono compatible. En escritorio se puede visualizar el modelo 3D, pero el boton RA depende del navegador y del dispositivo.
+
+El visor usa reconocimiento de plano nativo con `ar-placement`. Antes de entrar en RA puedes elegir `Piso` o `Pared`; el telefono detecta el plano compatible y posiciona el modelo sobre esa superficie. `ar-scale="auto"` permite ajustar el tamano desde la experiencia RA cuando el dispositivo lo soporte.

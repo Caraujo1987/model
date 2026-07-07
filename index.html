@@ -8,8 +8,22 @@
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
   </head>
   <body>
-    <!-- <model-viewer> HTML element -->
-    <model-viewer src="result.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+    <model-viewer
+      id="ar-viewer"
+      src="result.glb"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-placement="floor"
+      ar-scale="auto"
+      xr-environment
+      camera-controls
+      tone-mapping="neutral"
+      poster="poster.webp"
+      shadow-intensity="1">
+      <div class="placement-switch" slot="top">
+        <button class="placement-option active" type="button" data-placement="floor" aria-pressed="true">Piso</button>
+        <button class="placement-option" type="button" data-placement="wall" aria-pressed="false">Pared</button>
+      </div>
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
