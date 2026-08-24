@@ -82,7 +82,8 @@ canvas {
   margin-top: 14px;
 }
 
-.controls button {
+.controls button,
+.ar-link {
   min-width: 112px;
   height: 38px;
   padding: 0 14px;
@@ -93,11 +94,18 @@ canvas {
   font: 700 14px/38px Arial, Helvetica, sans-serif;
 }
 
-.controls button:hover {
+.ar-link {
+  text-align: center;
+  text-decoration: none;
+}
+
+.controls button:hover,
+.ar-link:hover {
   background: rgba(255, 255, 255, 0.14);
 }
 
-.controls button[aria-pressed="true"] {
+.controls button[aria-pressed="true"],
+.ar-link {
   border-color: rgba(65, 214, 163, 0.8);
   background: var(--accent-strong);
 }

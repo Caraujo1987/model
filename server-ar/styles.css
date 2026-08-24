@@ -1,0 +1,172 @@
+:not(:defined) > * {
+  display: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.top-bar {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: min(460px, calc(100vw - 24px));
+  transform: translateX(-50%);
+}
+
+.scene-link,
+.placement-switch {
+  border: 1px solid rgba(32, 33, 36, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 6px 18px rgba(32, 33, 36, 0.14);
+}
+
+.scene-link {
+  height: 44px;
+  padding: 0 14px;
+  color: #1a73e8;
+  font: 700 14px/44px Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.placement-switch {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+}
+
+.placement-option {
+  min-width: 72px;
+  height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #3c4043;
+  font: 700 14px/36px Arial, Helvetica, sans-serif;
+}
+
+.placement-option.active {
+  background: #1a73e8;
+  color: #ffffff;
+}
+
+.scene-link:focus-visible,
+.placement-option:focus-visible,
+#ar-button:focus-visible {
+  outline: 2px solid #174ea6;
+  outline-offset: 2px;
+}
+
+.progress-bar {
+  display: block;
+  width: 33%;
+  height: 10%;
+  max-height: 2%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 25px;
+  box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.5), 0 0 5px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar.hide {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.update-bar {
+  width: 0%;
+  height: 100%;
+  border-radius: 25px;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: width 0.3s;
+}
+
+#ar-button {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  height: 42px;
+  padding: 0 18px 0 44px;
+  transform: translateX(-50%);
+  border: 1px solid #dadce0;
+  border-radius: 21px;
+  background: #ffffff url("../ar_icon.png") no-repeat 14px 50% / 20px 20px;
+  color: #1a73e8;
+  font: 700 14px/42px Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+
+#ar-button:active {
+  background-color: #e8eaed;
+}
+
+@keyframes circle {
+  from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes elongate {
+  from { transform: translateX(100px); }
+  to { transform: translateX(-100px); }
+}
+
+model-viewer > #ar-prompt {
+  position: absolute;
+  left: 50%;
+  bottom: 72px;
+  display: none;
+  animation: elongate 2s infinite ease-in-out alternate;
+}
+
+model-viewer[ar-status="session-started"] > #ar-prompt {
+  display: block;
+}
+
+model-viewer > #ar-prompt > img {
+  animation: circle 4s linear infinite;
+}
+
+@media (max-width: 520px) {
+  .top-bar {
+    top: 12px;
+  }
+
+  .scene-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .placement-switch {
+    width: 100%;
+  }
+
+  .placement-option {
+    flex: 1;
+  }
+}

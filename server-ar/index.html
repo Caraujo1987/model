@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Servidor en RA</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Visor RA para posicionar el modelo SERVER BLENDER en el espacio real">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <model-viewer
+      id="ar-viewer"
+      src="../server-vr/SERVER_BLENDER.glb"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-placement="floor"
+      ar-scale="auto"
+      xr-environment
+      camera-controls
+      tone-mapping="neutral"
+      poster="../server-vr/poster.webp"
+      shadow-intensity="1">
+      <div class="top-bar" slot="top">
+        <a class="scene-link" href="../server-vr/">Ver escena VR</a>
+        <div class="placement-switch" aria-label="Tipo de plano RA">
+          <button class="placement-option active" type="button" data-placement="floor" aria-pressed="true">Piso</button>
+          <button class="placement-option" type="button" data-placement="wall" aria-pressed="false">Pared</button>
+        </div>
+      </div>
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+        Poner en mi espacio
+      </button>
+      <div id="ar-prompt">
+        <img src="../ar_hand_prompt.png" alt="Guia para mover el telefono en realidad aumentada">
+      </div>
+    </model-viewer>
+    <script src="./script.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+  </body>
+</html>

@@ -10,6 +10,7 @@ Proyecto web estatico para visualizar un modelo 3D (`result.glb`) con soporte de
 - `result.glb`: modelo 3D.
 - `poster.webp`: imagen previa del modelo.
 - `server-vr/`: segunda escena WebXR VR con el modelo `SERVER_BLENDER.glb`.
+- `server-ar/`: visor RA para poner `SERVER_BLENDER.glb` en el espacio real.
 
 ## Visualizar localmente
 
@@ -29,6 +30,12 @@ La escena VR nueva queda en:
 
 ```text
 http://localhost:8000/server-vr/
+```
+
+La version RA del mismo modelo queda en:
+
+```text
+http://localhost:8000/server-ar/
 ```
 
 ## Publicar con GitHub Pages
