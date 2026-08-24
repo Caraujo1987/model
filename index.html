@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <title>Visor RA 3D</title>
+    <title>Servidor en RA</title>
     <meta charset="utf-8">
-    <meta name="description" content="Visor web de modelo 3D con realidad aumentada">
+    <meta name="description" content="Visor RA para posicionar el modelo SERVER BLENDER en el espacio real">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
   </head>
   <body>
     <model-viewer
       id="ar-viewer"
-      src="result.glb"
+      src="server-vr/SERVER_BLENDER.glb"
       ar
       ar-modes="webxr scene-viewer quick-look"
       ar-placement="floor"
@@ -18,7 +18,7 @@
       xr-environment
       camera-controls
       tone-mapping="neutral"
-      poster="poster.webp"
+      poster="server-vr/poster.webp"
       shadow-intensity="1">
       <div class="placement-switch" slot="top">
         <button class="placement-option active" type="button" data-placement="floor" aria-pressed="true">Piso</button>
@@ -28,7 +28,7 @@
           <div class="update-bar"></div>
       </div>
       <button slot="ar-button" id="ar-button">
-          Ver en tu espacio
+          Poner en mi espacio
       </button>
       <div id="ar-prompt">
           <img src="ar_hand_prompt.png" alt="Guia para mover el telefono en realidad aumentada">

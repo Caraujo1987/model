@@ -4,11 +4,11 @@ Proyecto web estatico para visualizar un modelo 3D (`result.glb`) con soporte de
 
 ## Archivos principales
 
-- `index.html`: estructura del visor 3D/RA.
+- `index.html`: visor RA principal para `SERVER_BLENDER.glb`.
 - `styles.css`: estilos del visor, barra de progreso y boton RA.
 - `script.js`: control de progreso de carga y selector de plano RA.
-- `result.glb`: modelo 3D.
-- `poster.webp`: imagen previa del modelo.
+- `result.glb`: modelo 3D anterior.
+- `poster.webp`: imagen previa del modelo anterior.
 - `server-vr/`: segunda escena WebXR VR con el modelo `SERVER_BLENDER.glb`.
 - `server-ar/`: visor RA para poner `SERVER_BLENDER.glb` en el espacio real.
 
