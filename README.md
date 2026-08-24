@@ -53,3 +53,5 @@ La realidad aumentada funciona mejor desde un telefono compatible. En escritorio
 El visor usa reconocimiento de plano nativo con `ar-placement`. Antes de entrar en RA puedes elegir `Piso` o `Pared`; el telefono detecta el plano compatible y posiciona el modelo sobre esa superficie. `ar-scale="auto"` permite ajustar el tamano desde la experiencia RA cuando el dispositivo lo soporte.
 
 En navegadores que mantienen WebXR dentro de la pagina, como Chrome Android compatible con ARCore, aparece un panel durante la sesion RA con estado de rastreo del plano y boton `Foto`. En Safari/iOS, la experiencia RA se abre con Quick Look, que es una vista nativa de Apple; ahi no se pueden insertar botones personalizados desde la web, por lo que la foto debe hacerse con captura de pantalla o controles del sistema.
+
+La pagina usa `model-viewer` 4.2.0 para evitar una regresion observada en `model-viewer` 4.3.1 con Chrome y otros navegadores iOS de terceros al abrir Quick Look sin un archivo `ios-src`.
