@@ -11,8 +11,9 @@
     <model-viewer
       id="ar-viewer"
       src="server-vr/SERVER_BLENDER.glb"
+      alt="Modelo 3D de gabinetes de servidor"
       ar
-      ar-modes="webxr scene-viewer quick-look"
+      ar-modes="quick-look webxr scene-viewer"
       ar-placement="floor"
       ar-scale="auto"
       xr-environment
@@ -32,6 +33,10 @@
       </button>
       <div id="ar-prompt">
           <img src="ar_hand_prompt.png" alt="Guia para mover el telefono en realidad aumentada">
+      </div>
+      <div id="ar-tools">
+        <span id="tracking-status">Mueve el telefono para reconocer el plano</span>
+        <button id="capture-button" type="button">Foto</button>
       </div>
     </model-viewer>  
     <script src="script.js"></script>

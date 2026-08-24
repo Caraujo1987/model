@@ -73,9 +73,48 @@ model-viewer {
 
 .scene-link:focus-visible,
 .placement-option:focus-visible,
+#capture-button:focus-visible,
 #ar-button:focus-visible {
   outline: 2px solid #174ea6;
   outline-offset: 2px;
+}
+
+#ar-tools {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  width: min(420px, calc(100vw - 24px));
+  transform: translateX(-50%);
+  padding: 8px;
+  border: 1px solid rgba(32, 33, 36, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 6px 18px rgba(32, 33, 36, 0.18);
+}
+
+#tracking-status {
+  flex: 1;
+  color: #3c4043;
+  font: 700 13px/1.25 Arial, Helvetica, sans-serif;
+}
+
+#capture-button {
+  min-width: 82px;
+  height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #1a73e8;
+  color: #ffffff;
+  font: 700 14px/38px Arial, Helvetica, sans-serif;
+}
+
+#capture-button:disabled {
+  opacity: 0.68;
 }
 
 .progress-bar {
@@ -148,6 +187,10 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
   display: block;
 }
 
+model-viewer[ar-status="session-started"] > #ar-tools {
+  display: flex;
+}
+
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
 }
@@ -168,5 +211,9 @@ model-viewer > #ar-prompt > img {
 
   .placement-option {
     flex: 1;
+  }
+
+  #ar-tools {
+    bottom: 16px;
   }
 }
