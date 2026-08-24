@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Escena VR web para visualizar el modelo SERVER_BLENDER">
+    <title>Escena VR - SERVER BLENDER</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main id="app">
+      <section class="hud" aria-label="Panel de escena">
+        <div>
+          <p class="eyebrow">Escena VR</p>
+          <h1>SERVER BLENDER</h1>
+        </div>
+        <div class="status-row">
+          <span id="loading-status">Cargando modelo...</span>
+          <span id="vr-status">VR listo en visores compatibles</span>
+        </div>
+        <div class="controls">
+          <button id="reset-view" type="button">Recentrar</button>
+          <button id="toggle-rotate" type="button" aria-pressed="true">Rotacion</button>
+        </div>
+      </section>
+      <div id="scene-root" aria-label="Vista 3D interactiva"></div>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

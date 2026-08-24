@@ -9,6 +9,7 @@ Proyecto web estatico para visualizar un modelo 3D (`result.glb`) con soporte de
 - `script.js`: control de progreso de carga y selector de plano RA.
 - `result.glb`: modelo 3D.
 - `poster.webp`: imagen previa del modelo.
+- `server-vr/`: segunda escena WebXR VR con el modelo `SERVER_BLENDER.glb`.
 
 ## Visualizar localmente
 
@@ -22,6 +23,12 @@ Luego entra en:
 
 ```text
 http://localhost:8000
+```
+
+La escena VR nueva queda en:
+
+```text
+http://localhost:8000/server-vr/
 ```
 
 ## Publicar con GitHub Pages
